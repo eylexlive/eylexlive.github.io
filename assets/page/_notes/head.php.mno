@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_serhead" value="name:id;datatype:int,name:sadi;datatype:string,name:sip;datatype:string,name:port;datatype:string,name:soyun;datatype:string" />
+</info>
