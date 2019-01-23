@@ -1,77 +1,85 @@
-<?php require_once 'settings.php'; ?>
-<!DOCTYPE html>
-<html lang="tr">
-	<head>
-		<meta charset="UTF-8">
-		<title><?php echo $set["site_name"]; ?></title>
-		<link rel='stylesheet' href='css/bootstrap.css'> 
-	</head>
-	<body>
-		<div class="navbar navbar-default navbar-fixed-top">
-	  <div class="container">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
+<?php
+include 'header.php';
+include 'sidebar.php';
 
-	      </button> <a class="navbar-brand" href="#"><?php echo $set["site_name"]; ?></a>
+$ayarsor=$db->prepare("SELECT * FROM ayarlar");
+$ayarsor->execute();
 
-	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <!-- [Sağ Menü] -->
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="index.php">Home</a></li>
-	      </ul>
-	      <!-- [Sol Menü] -->
-	  	<script type="text/javascript">
-			document.write(unescape('%3C%75%6C%20%63%6C%61%73%73%3D%22%6E%61%76%20%6E%61%76%62%61%72%2D%6E%61%76%20%6E%61%76%62%61%72%2D%72%69%67%68%74%22%3E%0A%20%20%20%20%20%20%20%20%3C%6C%69%3E%3C%61%20%68%72%65%66%3D%22%68%74%74%70%3A%2F%2F%62%65%72%6B%2E%70%77%22%3E%40%42%65%72%6B%50%57%3C%2F%61%3E%3C%2F%6C%69%3E%0A%20%20%20%20%20%20%3C%2F%75%6C%3E'));
-		</script>
-	    </div>
-	  </div>
-	</div>
+$ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
+?>
+<div class="span9">
+      <div class="content">
 
+        <div class="module">
+          <div class="module-head">
+            <h3>Site Genel Ayarları</h3>
+          </div>
+          <div class="module-body">
 
-	<div class="container" style="margin-top: 80px">
-	  <div class="panel panel-primary">
-	    <div class="panel-heading">
-	      <h3 class="panel-title">Top <?php echo $set["table_limit"]; ?></h3>
-	    </div>
-	    <table class="table table-striped table-hover ">
-	      <thead>
-	        <tr>
-	          <th>#</th>
-	          <th>Player</th>
-	          <th>Kills</th>
-	          <?php echo ($set["mob_kill"] == "1") ? "<th>Mob Kills</th>" : null ; ?>
-	          <th>Deaths</th>
-	        </tr>
-	      </thead>
-	      <tbody>
-			<?php 
+              <form class="form-horizontal row-fluid" action="operation.php" method="POST">
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Site Title</label>
+                  <div class="controls">
+                    <input type="text" name="site_title" value="<?php echo $ayarcek['site_title']; ?>" class="span8">
+                  </div>
+                </div>
 
-				$query = $db->query("SELECT * FROM player_stats ORDER BY kills DESC LIMIT 0,".$set["table_limit"], PDO::FETCH_ASSOC);
-				if ( $query->rowCount() ){
-			     	foreach( $query as $row ){
-						$head = ($set["head"] == "1") ? '<img src="https://minotar.net/avatar/'.$row["playername"].'/17" class="img-circle">' : null ;
-						echo "<tr>";
-						echo "<td>".$row["id"]."</td>";
-						echo "<td>".$head." ".$row["playername"]."</td>";
-						echo "<td>".$row["kills"]."</td>";
-						echo ($set["mob_kill"] == "1") ? "<td>".$row["mobkills"]."</td>" : null;
-						echo "<td>".$row["deaths"]."</td>";
-						echo "</tr>";
-			     	}
-				}
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Site Url</label>
+                  <div class="controls">
+                    <input type="text" name="site_url" value="<?php echo $ayarcek['site_url']; ?>" class="span8">
+                  </div>
+                </div>
 
-			?>
-	      </tbody>
-	    </table>
-	  </div>
-	</div>
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Site Logo</label>
+                  <div class="controls">
+                    <input type="text" name="site_logo" value="<?php echo $ayarcek['site_logo']; ?>" class="span8">
+                  </div>
+                </div>
 
-	<script src="js/jquery-2.2.4.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Site Arkaplan</label>
+                  <div class="controls">
+                    <input type="text" name="site_arkaplan" value="<?php echo $ayarcek['site_arkaplan']; ?>" class="span8">
+                  </div>
+                </div>
 
-	</body>
-</html>
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Featured Durum</label>
+                  <div class="controls">
+                    <select class="span8" name="site_featured_durum">
+                      <?php if ($ayarcek['site_featured_durum'] == 1) { ?>
+													<option value="1">Aktif</option>
+                          <option value="0">Pasif</option>
+                      <?php } else if ($ayarcek['site_featured_durum'] == 0) { ?>
+                          <option value="0">Pasif</option>
+                          <option value="1">Aktif</option>
+                      <?php } ?>
+												</select>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="basicinput">Featured Resim</label>
+                  <div class="controls">
+                    <input type="text" name="site_featured_resim" value="<?php echo $ayarcek['site_featured_resim']; ?>" class="span8">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <div class="controls">
+                    <button type="submit" name="ayarsave" class="btn btn-success">Ayarları Kaydet</button>
+                  </div>
+                </div>
+
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+<?php include 'footer.php'; ?>
