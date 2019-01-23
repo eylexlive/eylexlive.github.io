@@ -1,0 +1,16 @@
+
+body {
+	
+	background: url("https://www.leviathyn.com/wp-content/uploads/2013/03/minecraft2_screenshot.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+}
+
+.resim {
+	
+	margin-top:10px;
+	padding-bottom:10px;
+}
