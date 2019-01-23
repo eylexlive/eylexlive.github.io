@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_smtp" value="name:id;datatype:int,name:debug_email_to;datatype:string,name:debug_email_subject;datatype:string,name:debug_email_from;datatype:string,name:email_host;datatype:string,name:email_user;datatype:string,name:email_port;datatype:string,name:email_password;datatype:string,name:email_defaultFrom;datatype:string" />
-</info>

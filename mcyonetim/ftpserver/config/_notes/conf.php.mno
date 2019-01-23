@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<info>
-	<infoitem key="UD_ftp" value="name:id;datatype:int,name:ftpip;datatype:string,name:ftpuser;datatype:string,name:ftpsifre;datatype:string,name:ftpport;datatype:string" />
-</info>
