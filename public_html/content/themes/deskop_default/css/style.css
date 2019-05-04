@@ -1,0 +1,14 @@
+/* GKod */
+.gkod input {
+  width: 40px;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  display: inline;
+}
+
+.gkod .cizgi {
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
