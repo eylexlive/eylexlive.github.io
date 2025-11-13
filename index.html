@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>umut/eylexlivetitle>
+  <title>umut/eylexlive</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -246,35 +246,111 @@
       color: #ddd;
     }
 
-    .skills-list {
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       text-align: left;
-      display: inline-block;
-      margin: 0 auto;
     }
 
-    .skill-item {
+    .about-item {
       display: flex;
-      align-items: center;
-      margin: 15px 0;
-      font-size: 1.1rem;
-      color: #ddd;
+      align-items: flex-start;
+      padding: 25px;
+      background: rgba(255, 65, 108, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 65, 108, 0.1);
       transition: all 0.3s ease;
-      padding: 10px;
-      border-radius: 10px;
     }
 
-    .skill-item:hover {
+    .about-item:hover {
       background: rgba(255, 65, 108, 0.1);
-      transform: translateX(10px);
-      color: #ff416c;
+      transform: translateY(-5px);
+      border-color: rgba(255, 65, 108, 0.3);
     }
 
-    .skill-item::before {
-      content: '▹';
-      color: #ff416c;
-      font-weight: bold;
-      margin-right: 15px;
-      font-size: 1.5rem;
+    .about-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .about-text strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .about-text p {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      display: flex;
+      align-items: flex-start;
+      padding: 30px;
+      background: rgba(255, 65, 108, 0.03);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 65, 108, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .skill-card:hover {
+      background: rgba(255, 65, 108, 0.08);
+      transform: translateY(-8px);
+      border-color: rgba(255, 65, 108, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 65, 108, 0.2);
+    }
+
+    .skill-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .skill-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .skill-info p {
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      border-radius: 10px;
+      transition: width 1.5s ease;
+      position: relative;
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { box-shadow: 0 0 5px rgba(255, 65, 108, 0.5); }
+      50% { box-shadow: 0 0 20px rgba(255, 65, 108, 0.8); }
+      100% { box-shadow: 0 0 5px rgba(255, 65, 108, 0.5); }
     }
 
     .scroll-indicator {
@@ -343,16 +419,15 @@
     <div class="card">
       <div class="card-content about-grid">
         <div class="about-item">
-          <div class="about-icon">🛠️</div>
           <div class="about-text">
-            <strong>self-taught builder</strong>
+            <strong>Self-taught builder</strong>
             <p>learning by doing, breaking, and fixing</p>
           </div>
         </div>
         <div class="about-item">
           <div class="about-text">
-            <strong>problem solver</strong>
-            <p>i fix things by breaking them first</p>
+            <strong>Researcher</strong>
+            <p>i like looking for vulnerabilities</p>
           </div>
         </div>
       </div>
@@ -366,8 +441,8 @@
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-info">
-              <h3>Security Research</h3>
-              <p>picking up binaries, sometimes web securit.. idk</p>
+              <h3>Security</h3>
+              <p>security stuff, binaries, sometimes web security</p>
               <div class="skill-bar">
                 <div class="skill-progress" style="width: 85%"></div>
               </div>
@@ -387,7 +462,7 @@
           <div class="skill-card">
             <div class="skill-info">
               <h3>Math</h3>
-              <p>math expert (as long as theres a calculator)</p>
+              <p>math expert (as long as there's a calculator)</p>
               <div class="skill-bar">
                 <div class="skill-progress" style="width: 75%"></div>
               </div>
@@ -396,8 +471,8 @@
           
           <div class="skill-card">
             <div class="skill-info">
-              <h3>Programming?</h3>
-              <p>java, python, sql (for exploitation mostly), c (still cant code, read only)</p>
+              <h3>Programming</h3>
+              <p>java, python, sql, c (still cant code, read only)</p>
               <div class="skill-bar">
                 <div class="skill-progress" style="width: 70%"></div>
               </div>
