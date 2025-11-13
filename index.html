@@ -197,6 +197,33 @@
       border-radius: 2px;
     }
 
+    .intro-text {
+      text-align: center;
+      margin: 30px 0 40px 0;
+      animation: fadeIn 1.2s ease forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+
+    .intro-text h3 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: 8px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(255, 65, 108, 0.3);
+    }
+
+    .intro-text p {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: #aaa;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
     .card { 
       background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
       padding: 40px; 
@@ -416,6 +443,10 @@
 
   <section id="info">
     <h2>about me</h2>
+    <div class="intro-text">
+      <h3>I'M UMUT</h3>
+      <p>a Student, builder and researcher..</p>
+    </div>
     <div class="card">
       <div class="card-content about-grid">
         <div class="about-item">
@@ -427,7 +458,7 @@
         <div class="about-item">
           <div class="about-text">
             <strong>Researcher</strong>
-            <p>i like looking for vulnerabilities</p>
+            <p>i like reversing, looking for vulnerabilities</p>
           </div>
         </div>
       </div>
@@ -441,30 +472,10 @@
         <div class="skills-grid">
           <div class="skill-card">
             <div class="skill-info">
-              <h3>Security</h3>
-              <p>security stuff, binaries, sometimes web security</p>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skill-card">
-            <div class="skill-info">
               <h3>Bug Hunting</h3>
-              <p>professional bug finder</p>
+              <p>professional (at least im tryin) bug finder</p>
               <div class="skill-bar">
                 <div class="skill-progress" style="width: 90%"></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skill-card">
-            <div class="skill-info">
-              <h3>Math</h3>
-              <p>math expert (as long as there's a calculator)</p>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
               </div>
             </div>
           </div>
@@ -474,7 +485,27 @@
               <h3>Programming</h3>
               <p>java, python, sql, c (still cant code, read only)</p>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Security</h3>
+              <p>security stuff, binaries, sometimes web security</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Math</h3>
+              <p>expert mathematician* <span style="font-size: 0.75em; opacity: 0.6;">(*calculator required, batteries not included)</span></p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 42%"></div>
               </div>
             </div>
           </div>
