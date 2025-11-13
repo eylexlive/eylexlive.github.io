@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>umut/eylexlive</title>
+  <title>umut/eylexlivetitle>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -341,9 +341,20 @@
   <section id="info">
     <h2>about me</h2>
     <div class="card">
-      <div class="card-content">
-        self-taught builder.<br>
-        i fix things by breaking them first.
+      <div class="card-content about-grid">
+        <div class="about-item">
+          <div class="about-icon">🛠️</div>
+          <div class="about-text">
+            <strong>self-taught builder</strong>
+            <p>learning by doing, breaking, and fixing</p>
+          </div>
+        </div>
+        <div class="about-item">
+          <div class="about-text">
+            <strong>problem solver</strong>
+            <p>i fix things by breaking them first</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -351,17 +362,53 @@
   <section id="skills">
     <h2>skills</h2>
     <div class="card">
-      <div class="card-content skills-list">
-        <div class="skill-item">security stuff</div>
-        <div class="skill-item">professional bug finder</div>
-        <div class="skill-item">math expert (as long as there's a calculator)</div>
-        <div class="skill-item">java, python, sql, c (still can't code, read only)</div>
+      <div class="card-content">
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Security Research</h3>
+              <p>picking up binaries, sometimes web securit.. idk</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Bug Hunting</h3>
+              <p>professional bug finder</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Math</h3>
+              <p>math expert (as long as theres a calculator)</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-card">
+            <div class="skill-info">
+              <h3>Programming?</h3>
+              <p>java, python, sql (for exploitation mostly), c (still cant code, read only)</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <script>
-    // Create animated particles
     const particlesContainer = document.getElementById('particles');
     for (let i = 0; i < 50; i++) {
       const particle = document.createElement('div');
